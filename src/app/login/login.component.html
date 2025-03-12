@@ -1,0 +1,25 @@
+<p-card header="Login" class="p-shadow-2 p-card-centered">
+    <div class="p-card-body">
+      <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+        <div class="p-field">
+          <label for="username" class="p-d-block">Username or Email</label>
+          <input id="username" type="text" pInputText [(ngModel)]="username" name="username" required class="input-field" />
+        </div>
+  
+        <div class="p-field">
+          <label for="password" class="p-d-block">Password</label>
+          <p-password id="password" [(ngModel)]="password" name="password" required [toggleMask]="true" class="input-field"></p-password>
+        </div>
+  
+        <div class="p-field-checkbox">
+          <p-checkbox name="rememberMe" label="Remember me" [(ngModel)]="rememberMe"></p-checkbox>
+        </div><br>
+  
+        <button pButton type="submit" label="Login" [disabled]="!loginForm.form.valid" class="p-button-block"></button>
+      </form>
+  
+      <p class="p-mt-2">
+        <a href="#">Forgot password?</a>
+      </p>
+    </div>
+  </p-card>

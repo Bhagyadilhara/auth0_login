@@ -1,0 +1,44 @@
+/* Ensure full height and centering of content */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Flex container for centering content */
+.p-card-centered {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Center content within the card */
+.p-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Space between form fields */
+.p-field {
+  margin-bottom: 1rem;
+}
+
+/* Apply to both username and password fields to make them the same length */
+.input-field {
+  width: 100%; /* Ensure full width for both fields */
+}
+
+/* Button styling */
+.p-button-block {
+  width: 100%;
+}
+
+/* Space between form and "forgot password" link */
+.p-mt-2 {
+  margin-top: 10px;
+  text-align: center;
+}
