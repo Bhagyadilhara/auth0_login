@@ -12,7 +12,7 @@ export class DashboardComponent {
     constructor(private auth: AuthService, private router: Router) {}
 
   logout() {
-
+    this.auth.logout({ logoutParams: { returnTo: document.location.origin } });  // Log out of the application
   }
 
 }
