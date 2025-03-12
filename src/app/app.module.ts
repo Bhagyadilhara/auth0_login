@@ -13,6 +13,11 @@ import { ToastModule } from 'primeng/toast';  // Optional, for showing alerts
 import { CheckboxModule } from 'primeng/checkbox';
 import { PasswordModule } from 'primeng/password';
 import { FormsModule } from '@angular/forms';
+import { AuthModule } from '@auth0/auth0-angular';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { ToolbarModule } from 'primeng/toolbar';
+
 
 
 @NgModule({
@@ -20,6 +25,7 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     LoginComponent,
     DashboardComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +37,16 @@ import { FormsModule } from '@angular/forms';
     ToastModule,
     CheckboxModule,
     PasswordModule,
-    FormsModule
+    FormsModule,
+    ToolbarModule,
+    BrowserAnimationsModule,
+    AuthModule.forRoot({
+      domain: 'dev-pny7emqnc5mj3ozx.us.auth0.com',
+      clientId: 'AGOnsa8qj5tM8nmnXzUuVCBvMb6PX8FQ',
+      authorizationParams: {
+        redirect_uri: window.location.origin
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
