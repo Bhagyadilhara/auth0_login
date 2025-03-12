@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
 
@@ -7,12 +7,18 @@ import { AuthService } from '@auth0/auth0-angular';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
+  user: any;
 
-    constructor(private auth: AuthService, private router: Router) {}
+  constructor(private auth: AuthService, private router: Router) {}
 
-  logout() {
-    this.auth.logout({ logoutParams: { returnTo: document.location.origin } });  // Log out of the application
+  ngOnInit() {
+    this.auth.user$.subscribe(user => {
+      this.user = user;
+    });
   }
 
+  logout() {
+    this.auth.logout({ logoutParams: { returnTo: document.location.origin } });
+  }
 }
