@@ -14,6 +14,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.auth.user$.subscribe(user => {
+      console.log('User Data:', user);
       this.user = user;
     });
   }
