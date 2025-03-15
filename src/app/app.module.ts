@@ -42,7 +42,7 @@ import { ToolbarModule } from 'primeng/toolbar';
     BrowserAnimationsModule,
     AuthModule.forRoot({
       domain: 'dev-pny7emqnc5mj3ozx.us.auth0.com',
-      clientId: 'AGOnsa8qj5tM8nmnXzUuVCBvMb6PX8FQ',
+      clientId: 'WhrX8VOA0I7acjnujiCYnIcaJPgwpFcl',
       authorizationParams: {
         redirect_uri: window.location.origin
       }
